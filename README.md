@@ -13,7 +13,7 @@ run pip install... when you are using a different device/virtual enviroment
 
 post a request(powershell):
 
-```powershell
+```powershell 
 powershell
 $body = @{
   prompt = ""
@@ -33,7 +33,7 @@ pip install requests
 import requests
 
 url = 'http://127.0.0.1:8000/generate'
-payload = {'prompt': (prompt), 'mode': 'generate')
+payload = {'prompt': prompt, 'mode': 'generate')
 
 response = requests.post(url, json=payload)
 
@@ -55,9 +55,9 @@ npm install axios
 const axios = require('axios')
 const fs = require('fs')
 
-async function generateAndDaveImage() {
+async function generateAndSaveImage() {
   const url = 'http://127.0.0.1:8000/generate'
-  const payload = { prompt: (prompt), mode: 'generate' }
+  const payload = { prompt: prompt, mode: 'generate' }
 
   try {
     const response = await axios.post(url, payload, {
@@ -65,7 +65,7 @@ async function generateAndDaveImage() {
     });
 
     fs.writeFileSync('generated_image.png', response.data);
-    console.log("Image saved successfully as generated_image.png');
+    console.log('Image saved successfully as generated_image.png');
   } catch (error) {
       console.error('Error generating image:', error.message);
     }
