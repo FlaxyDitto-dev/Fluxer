@@ -7,7 +7,8 @@ My Hardware: RTX 5060 TI 16GB, 32GB of Sys Ram. on my device it runs on 4 steps 
 Model is from hf.co(hugging face), provided by black-forest-labs.
 To run: pip install torch torchvision --index-url https://download.pytorch.org/whl/ cpu(for cpu(sys ram and slow))/cu{128-130}(for cuda)/mps(for apple silicon)
 pip install diffusers fastapi pydantic pillow uvicorn
-py Fluxer.py.
+
+python3 Fluxer.py.
 
 run pip install... when you are using a different device/virtual enviroment
 
