@@ -1,0 +1,6 @@
+diffusers
+fastapi 
+pydantic 
+pillow 
+uvicorn 
+xformers
