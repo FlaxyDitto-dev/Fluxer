@@ -20,9 +20,8 @@ post a request(powershell):
 powershell
 $body = @{
   prompt = ""
-  mode = "generate"
 } | ConvertTo-Json
-# Use ConvertTo-Json, it is required. you must fill the prompt parameter and mode must be equal to "generate"
+# Use ConvertTo-Json, it is required. you must fill the prompt key
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/generate" -Method Post -Body $body -ContentType "application/json" -OutFile "generated image path"
 ```
 
@@ -36,7 +35,7 @@ function Get-Flux {
     $oldProgress = $ProgressPreference
     $ProgressPreference = 'SilentlyContinue'
     
-    $body = @{ prompt = $prompt; mode = "generate" } | ConvertTo-Json
+    $body = @{ prompt = $prompt; } | ConvertTo-Json
     $fileName = "$PWD\flux_$(Get-Date -Format 'HHmmss').png"
     
     Write-Host "🎨 Generating: '$prompt'..." -ForegroundColor Cyan
@@ -69,7 +68,7 @@ pip install requests
 import requests
 
 url = 'http://127.0.0.1:8000/generate'
-payload = {'prompt': prompt, 'mode': 'generate'}
+payload = {'prompt': prompt}
 
 response = requests.post(url, json=payload)
 
@@ -93,7 +92,7 @@ const fs = require('fs')
 
 async function generateAndSaveImage() {
   const url = 'http://127.0.0.1:8000/generate'
-  const payload = { prompt: prompt, mode: 'generate' }
+  const payload = { prompt: prompt }
 
   try {
     const response = await axios.post(url, payload, {
