@@ -1,6 +1,8 @@
 # Fluxer
 Use Flux.2-klein-4b locally on you device. Post through powershell or an app to generate an image. This app runs on http://127.0.0.1:8000 on your device(localhost). Fluxer do have some hardware requirements. You need to read the Readme.md to use it.
 
+if you want that you will be able to access it from all device IPs that you are connected to and they are free then change in the last line(    uvicorn.run(app, host="127.0.0.1", port=8000), change 127.0.0.1 to 0.0.0.0
+
 Sys req: ~13GB of Vram, ~24-32GB of RAM(sometimes required).
 My Hardware: RTX 5060 TI 16GB, 32GB of Sys Ram. on my device it runs on 4 steps in 5-10s
 
