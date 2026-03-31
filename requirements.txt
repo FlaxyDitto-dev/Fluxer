@@ -1,6 +1,19 @@
-diffusers
-fastapi 
-pydantic 
-pillow 
-uvicorn 
-xformers
+# --- Core AI & Math ---
+torch>=2.1.2
+torchvision
+torchaudio
+diffusers>=0.30.0
+transformers
+accelerate
+numpy
+
+# --- Image Processing & Upscaling ---
+Pillow
+opencv-python
+aura-sr
+
+# --- Web Server & API ---
+fastapi
+uvicorn
+pydantic
+websockets
